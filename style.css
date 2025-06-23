@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -34,12 +35,14 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   padding: 0;
 }
 
+/* Global Heading Styles */
 h1 {
   text-align: center;
   color: var(--color-red);
   margin-bottom: 20px;
 }
 
+/* Links Styling */
 a {
   color: var(--color-red);
   text-decoration: none;
