@@ -1,0 +1,352 @@
+/* Universal Box-Sizing for consistency */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Define Custom Properties (CSS Variables) for Bill Collier's colors */
+:root {
+  --color-red: #B20710; /* A deep, intense red */
+  --color-gold: #FFD700; /* Standard gold color */
+  --color-black: #1A1A1A; /* A rich, slightly off-black for contrast */
+  --color-light-gray: #f0f0f0; /* Soft background color */
+  --color-text-dark: #333; /* Darker text for readability */
+  --color-text-light: #fefefe; /* Light text for dark backgrounds */
+}
+
+/* Global Styles & Body Layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-light-gray);
+}
+
+/* Basic Reset for common elements */
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: var(--color-red);
+  margin-bottom: 20px;
+}
+
+a {
+  color: var(--color-red);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+/* --- Header / Nav Section --- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  padding: 20px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.site-header .logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.site-header .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.site-header .nav-links a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-text-light);
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.site-header .nav-links a:hover,
+.site-header .nav-links a:focus {
+  background-color: var(--color-red);
+  color: var(--color-text-light);
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  background: url('images/hero-bill-collier.jpg') center top / cover no-repeat;
+  height: 70vh;
+  min-height: 350px;
+  width: 100%;
+  color: var(--color-text-light);
+  margin-top: 10px;
+}
+
+.hero-text-split {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: bold;
+  text-shadow: 2px 2px 8px var(--color-black);
+  color: var(--color-gold);
+  box-sizing: border-box;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.right-text {
+  text-align: right;
+}
+
+/* --- Main Content Section (Image) --- */
+.image-section {
+  flex-grow: 1;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--color-light-gray);
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Footer CTA Section --- */
+.cta-footer {
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+  margin-top: auto;
+}
+
+.cta-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.cta-footer-links a {
+  background-color: var(--color-red);
+  color: var(--color-text-light);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-footer-links a:hover {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- About Page Layout --- */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bio {
+  flex: 2;
+  min-width: 300px;
+  color: var(--color-text-dark);
+}
+
+.bio h2 {
+  color: var(--color-red);
+  margin-bottom: 15px;
+}
+
+.bio img {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  flex: 1;
+  background: var(--color-light-gray);
+  padding: 30px;
+  border-radius: 8px;
+  min-width: 250px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  color: var(--color-red);
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+/* --- Hobbies Page --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.grid-item {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--color-text-dark);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .image-section {
+    padding: 30px 15px;
+  }
+
+  .cta-footer-links {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-footer-links a {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bio, .sidebar {
+    min-width: unset;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+  }
+
+  .grid-item img {
+    height: 180px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .site-header .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .site-header .nav-links a {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .image-section {
+    padding: 20px 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item img {
+    height: 150px;
+  }
+}
