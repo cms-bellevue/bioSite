@@ -402,7 +402,7 @@ a:hover {
   }
 }
 
-/* Additional adjustments for small mobile screens. */
+/* Additional adjustments for small mobile screens */
 @media (max-width: 480px) {
   .hero {
     height: 50vh;
