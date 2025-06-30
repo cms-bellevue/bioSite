@@ -1,4 +1,5 @@
-/* Universal Box-Sizing for consistency */
+/* BASE & GLOBAL STYLES */
+
 html {
   box-sizing: border-box;
 }
@@ -7,17 +8,15 @@ html {
   box-sizing: inherit;
 }
 
-/* Define Custom Properties (CSS Variables) for Bill Collier's colors */
 :root {
-  --color-red: #B20710; /* A deep, intense red */
-  --color-gold: #FFD700; /* Standard gold color */
-  --color-black: #1A1A1A; /* A rich, slightly off-black for contrast */
-  --color-light-gray: #f0f0f0; /* Soft background color */
-  --color-text-dark: #333; /* Darker text for readability */
-  --color-text-light: #fefefe; /* Light text for dark backgrounds */
+  --color-red: #B20710;
+  --color-gold: #FFD700;
+  --color-black: #1A1A1A;
+  --color-light-gray: #f0f0f0;
+  --color-text-dark: #333;
+  --color-text-light: #fefefe;
 }
 
-/* Global Styles & Body Layout */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -29,20 +28,17 @@ body {
   background-color: var(--color-light-gray);
 }
 
-/* Basic Reset for common elements */
 h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
   padding: 0;
 }
 
-/* Global Heading Styles */
 h1 {
   text-align: center;
   color: var(--color-red);
   margin-bottom: 20px;
 }
 
-/* Links Styling */
 a {
   color: var(--color-red);
   text-decoration: none;
@@ -54,7 +50,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- Header / Nav Section --- */
+/* SITE HEADER & NAVIGATION */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -95,7 +91,10 @@ a:hover {
   color: var(--color-text-light);
 }
 
-/* --- Hero Section --- */
+/* PAGE SECTIONS */
+
+/* Hero Section (index.html) */
+
 .hero {
   position: relative;
   background: url('images/hero_time.jpg') center top / cover no-repeat;
@@ -130,7 +129,8 @@ a:hover {
   text-align: right;
 }
 
-/* --- Spotlight --- */
+/* Intro Spotlight Section (index.html) */
+
 .intro-spotlight {
   padding: 40px 20px;
   max-width: 1000px;
@@ -156,62 +156,8 @@ a:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* --- Main Content Section (Image) --- */
-.image-section {
-  flex-grow: 1;
-  padding: 40px 20px;
-  text-align: center;
-  background-color: var(--color-light-gray);
-}
+/* About Page Layout (about.html) */
 
-.image-section img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* --- Footer CTA Section --- */
-.cta-footer {
-  width: 100%;
-  background-color: var(--color-black);
-  color: var(--color-text-light);
-  padding: 25px 0;
-  text-align: center;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
-  margin-top: auto;
-}
-
-.cta-footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  padding: 0 15px;
-}
-
-.cta-footer-links a {
-  background-color: var(--color-red);
-  color: var(--color-text-light);
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.cta-footer-links a:hover {
-  background-color: var(--color-gold);
-  color: var(--color-black);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* --- About Page Layout --- */
 .about-container {
   display: flex;
   flex-wrap: wrap;
@@ -288,7 +234,8 @@ a:hover {
   margin-bottom: 10px;
 }
 
-/* --- Hobbies Page --- */
+/* Hobbies/Behind the Scenes Page (hobbies.html) */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -326,7 +273,8 @@ a:hover {
   color: var(--color-text-dark);
 }
 
-/* Interview Section */
+/* Interview Section (hobbies.html) */
+
 .interview-section {
   max-width: 1000px;
   margin: 50px auto;
@@ -360,45 +308,48 @@ a:hover {
   border-left: 4px solid var(--color-gold);
 }
 
-/* --- Responsiveness --- */
+/* FOOTER & CTA SECTION */
+
+.cta-footer {
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.4);
+  margin-top: auto;
+}
+
+.cta-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0 15px;
+}
+
+.cta-footer-links a {
+  background-color: var(--color-red);
+  color: var(--color-text-light);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-footer-links a:hover {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
 @media (max-width: 768px) {
-  .hero {
-    height: 60vh;
-  }
-
-  .image-section {
-    padding: 30px 15px;
-  }
-
-  .cta-footer-links {
-    gap: 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cta-footer-links a {
-    width: 80%;
-    max-width: 300px;
-  }
-
-  .about-container {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .bio, .sidebar {
-    min-width: unset;
-  }
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 20px;
-  }
-
-  .grid-item img {
-    height: 180px;
-  }
-
   .site-header {
     flex-direction: column;
     align-items: flex-start;
@@ -416,15 +367,45 @@ a:hover {
     width: 100%;
     padding: 10px;
   }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .about-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .bio, .sidebar {
+    min-width: unset;
+  }
+
+  .cta-footer-links {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-footer-links a {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+  }
+
+  .grid-item img {
+    height: 180px;
+  }
 }
 
+/* Additional adjustments for small mobile screens. */
 @media (max-width: 480px) {
   .hero {
     height: 50vh;
-  }
-
-  .image-section {
-    padding: 20px 10px;
   }
 
   .grid {
