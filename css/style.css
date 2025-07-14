@@ -264,14 +264,13 @@ a:hover {
   color: var(--color-text-dark);
 }
 
-/* Scroll Hint Style */
 .scroll-hint {
   text-align: center;
   margin: 30px auto;
   font-size: 1.1em;
   color: var(--color-black);
   animation: bounce 2s infinite;
-  max-width: 1000px; /* Aligns with content width */
+  max-width: 1000px;
   padding: 0 20px;
 }
 
